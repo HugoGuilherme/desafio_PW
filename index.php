@@ -26,16 +26,19 @@ $produtos = json_decode(curl_exec($ch));
 $produtosPorCategorias = _group_by($produtos, 'category');
 
 ?>
-<body>
+<body style="background: rgb(2,0,36);
+background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);">
     <?php
         foreach($produtosPorCategorias as $key => $value){
             ?>
             <br>
+            <h2 style="text-align: center; color: yellow;">
             <?php
                 print_r($key);
             ?>
+            </h2>
             <section class="container">
-        <div class="bg-dark p-5 my-5">
+        <div class="bg-dark p-5 my-5" style="border-radius: 10px; box-shadow: 1px 1px 10px black">
             <div id="carouselExampleIndicators_<?= $key ?>" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators pt-5">
                     <?php 
@@ -51,16 +54,17 @@ $produtosPorCategorias = _group_by($produtos, 'category');
                             <div class="carousel-item <?php if($i == 0) { echo ' active'; }?>">
                                 <div class="row">
                                     <?php for($j=0; $j < 3  && $i < count($value); $j++){ ?>
-                                        <div class="col-md-4 my-5">
-                                        <div class="card" style="width: 18rem">
+                                        <div class="col-12 col-md-4  my-5">
+                                        <div class="card" style="width: 100%; height: 100%;">
                                             <img src="<?= $value[$i]->imagem ?>"
                                                 class="card-img-top" alt="...">
                                             <div class="card-body">
-                                                <p class="card-text"><?= $value[$i]->body ?></p>
+                                                <p class="card-text"><?= $value[$i]->category ?></p>
+                                                <p class="card-text"><?= $value[$i]->title ?></p>
+                                                <p class="card-text"><?= $value[$i]->body ?></p> 
                                             </div>
                                         </div>
                                     </div>
-                                    
                                     <?php $i++; } ?>
                                 </div>
                             </div>
