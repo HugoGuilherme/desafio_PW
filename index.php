@@ -61,7 +61,7 @@ background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba
                                             <div class="card-body">
                                                 <p class="card-text"><?= $value[$i]->category ?></p>
                                                 <p class="card-text"><?= $value[$i]->title ?></p>
-                                                <p class="card-text"><?= $value[$i]->body ?></p> 
+                                                <p class="card-text" style="text-align: justify;"><?= $value[$i]->body ?></p> 
                                             </div>
                                         </div>
                                     </div>
@@ -74,7 +74,7 @@ background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba
                         ?>
 
                 </div>   
-                  <a class="carousel-control-prev" href="#carouselExampleIndicators_<?= $key ?>" role="button" data-slide="prev">
+                <a class="carousel-control-prev " href="#carouselExampleIndicators_<?= $key ?>"  role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
                 </a>
